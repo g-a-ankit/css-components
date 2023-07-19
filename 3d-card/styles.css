@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  /* background-color: grey; */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.card {
+  position: relative;
+  background: black;
+  color: #fff;
+  width: 20rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  transform: perspective(5000px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+  transform-style: preserve-3d;
+}
+
+.card > p {
+  background-color: #000;
+  font-size: 2rem;
+  text-shadow: 0 0 0.5em currentColor;
+}
+
+.card::after,
+.card::before {
+  position: absolute;
+  border-radius: inherit;
+  content: "";
+}
+
+.card::before {
+  inset: 0rem;
+  background-color: #5a5757;
+  transform: translateZ(-45px);
+  filter: blur(15px);
+}
+
+.card::after {
+  inset: -1rem;
+  background-color: rgb(80, 214, 203);
+  transform: translateZ(-50px);
+}
